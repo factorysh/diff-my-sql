@@ -32,6 +32,8 @@ if __name__ == '__main__':
         if ct == a[table]:
             print("[SAME] ", table)
             continue
-        print("[CHANGED]", table)
+        print("[CHANGED] ", table)
         for diff in context_diff(ct.split('\n'), a[table].split('\n')):
             print(diff)
+    for old in tables - set(a.keys()):
+        print("[REMOVED] ", old)
